@@ -28,12 +28,15 @@ ExibirOpcoesMenu();
 
 Console.Write("Digite sua opção: ");
 int escolha = int.Parse(Console.ReadLine()!);
+List<string> listaBandas = new List<string>();    
+
 switch (escolha)
 {
-    case 1: Console.WriteLine("Você escolheu a opção " + escolha);
+    case 1:
+        RegistrarBanda();
         break;
     case 2:
-        Console.WriteLine("Você escolheu a opção " + escolha);
+        MostrarBandasRegistradas();
         break;
     case 3:
         Console.WriteLine("Você escolheu a opção " + escolha);
@@ -48,4 +51,22 @@ switch (escolha)
         break;
 }
 
-    
+void RegistrarBanda()
+{
+    Console.Clear();
+    Console.WriteLine("Registro de bandas");
+    Console.WriteLine("Digite o nome da banda que deseja registrar");
+    string nomeDaBanda = Console.ReadLine()!;
+    listaBandas.Add(nomeDaBanda);
+    Console.WriteLine($"A banda {nomeDaBanda} foi registrada com sucesso! ");
+    Thread.Sleep( 2000 );
+    Console.Clear() ;
+    ExibirMensagemBoasVindas() ;
+    ExibirOpcoesMenu() ;
+}
+
+    void MostrarBandasRegistradas()
+{
+    Console.Clear();
+
+}
